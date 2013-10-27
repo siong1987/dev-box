@@ -13,6 +13,11 @@ sudo add-apt-repository -y ppa:rwky/redis
 sudo apt-get update
 sudo apt-get -y install redis-server
 
+# nodejs
+sudo add-apt-repository -y ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get -y install nodejs
+
 # postgres
 sudo apt-get -y install postgresql
 sudo -u postgres createuser --superuser $USER
