@@ -18,6 +18,13 @@ sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get -y install nodejs
 
+# mongodb
+
+sudo apt-key -y adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+sudo apt-get update
+sudo apt-get -y --force-yes install mongodb-10gen
+
 # postgres
 sudo apt-get -y install postgresql
 sudo -u postgres createuser --superuser $USER
@@ -40,3 +47,5 @@ rbenv global 2.0.0-p247
 echo 'gem: --no-ri --no-rdoc' >> ~/.gemrc
 gem install bundler
 rbenv rehash
+
+echo 'eval "cd ~/Projects"' >> ~/.profile
